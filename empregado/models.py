@@ -38,7 +38,7 @@ class Assalariado(Empregado):
 
 class Horista(Empregado):
     valor_hora = models.FloatField()
-    cartao_de_ponto = models.OneToOneField('Cartao_de_ponto',on_delete=models.CASCADE)
+    cartao_de_ponto = models.OneToOneField('Cartao_de_ponto',on_delete=models.SET_NULL,null=True, blank=True)
 
     class Meta:
         db_table = 'horista'
